@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { signOut, useSession } from "next-auth/react"
 
 const categories = [
     { name: "CPU", value: "CPU" },
@@ -12,6 +13,7 @@ const categories = [
 ]
 
 export default function Navbar() {
+
     return (
         <div className="navbar bg-base-200">
             <div className="flex-1">
@@ -37,6 +39,9 @@ export default function Navbar() {
                     </li>
                 </ul>
                 <Link href="/pc-build" className='btn btn-primary'>PC Build</Link>
+                <div className='ml-2'>
+                    <button className='btn btn-warning'>Sign Out</button>
+                </div>
             </div>
         </div>
     )

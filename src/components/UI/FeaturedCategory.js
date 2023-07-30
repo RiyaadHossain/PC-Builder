@@ -22,7 +22,7 @@ export default function FeaturedCategory() {
             <h1 className='section_title'>Featured Category</h1>
             <div className='flex flex-wrap gap-8 justify-center'>
                 {
-                    categories.map(category => <CategoryCard key={categories.name} category={category} />)
+                    categories.map(category => <CategoryCard key={categories.value} category={category} />)
                 }
             </div>
         </div>

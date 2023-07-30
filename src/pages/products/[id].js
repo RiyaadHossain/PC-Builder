@@ -64,7 +64,7 @@ ProductDetails.getLayout = function getLayout(page) {
 
 
 export const getStaticPaths = async () => {
-    const res = await fetch('http://localhost:5001/products')
+    const res = await fetch('https://pc-builder-server-opal.vercel.app/products')
     const products = await res.json()
 
     const paths = products.data.map((product) => ({
@@ -76,7 +76,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const { params } = context
-    const res = await fetch(`http://localhost:5001/products/${params?.id}`)
+    const res = await fetch(`https://pc-builder-server-opal.vercel.app/products/${params?.id}`)
     const data = await res.json()
 
     return { props: { product: data.data } }

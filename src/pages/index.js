@@ -2,10 +2,11 @@ import RootLayout from '<test>/components/RootLayout/RootLayout';
 import Banner from '<test>/components/UI/Banner';
 import FeaturedCategory from '<test>/components/UI/FeaturedCategory';
 import FeaturedProduct from '<test>/components/UI/FeaturedProduct';
+import { useSession } from 'next-auth/react';
 import Head from 'next/head'
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:5001/products')
+  const res = await fetch('https://pc-builder-server-opal.vercel.app/products')
   const products = await res.json()
   return { props: { products } }
 }

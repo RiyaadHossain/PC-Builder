@@ -27,8 +27,8 @@ CategoryComponent.getLayout = function getLayout(page) {
 };
 
 export async function getServerSideProps(context) {
-    const { params } = context 
-    const res = await fetch(`http://localhost:5001/productsByCategory/${params?.category}`)
+    const { params } = context
+    const res = await fetch(`https://pc-builder-server-opal.vercel.app/productsByCategory/${params?.category}`)
     const data = await res.json()
 
     return { props: { products: data.data } }
@@ -48,7 +48,7 @@ export async function getServerSideProps(context) {
 
 
 /* export const getStaticPaths = async () => {
-    const res = await fetch('http://localhost:5001/products')
+    const res = await fetch('https://pc-builder-server-opal.vercel.app/products')
     const products = await res.json()
 
     const paths = products.data.map((product) => ({
@@ -61,7 +61,7 @@ export async function getServerSideProps(context) {
 export const getStaticProps = async (context) => {
     const { params } = context
 
-    const res = await fetch(`http://localhost:5001/productsByCategory/${params?.category}`)
+    const res = await fetch(`https://pc-builder-server-opal.vercel.app/productsByCategory/${params?.category}`)
     const data = await res.json()
     return { props: { products: data.data } }
 } */
