@@ -39,9 +39,9 @@ export default function Navbar() {
                     </li>
                 </ul>
                 <Link href="/pc-build" className='btn btn-primary'>PC Build</Link>
-                <div className='ml-2'>
+                {/* <div className='ml-2'>
                     <button className='btn btn-warning'>Sign Out</button>
-                </div>
+                </div> */}
             </div>
         </div>
     )
